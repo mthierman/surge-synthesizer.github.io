@@ -1,0 +1,32 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+
+import Base from "layouts/base.astro";
+
+type Props = MarkdownLayoutProps<{ title: string; order: number }>;
+
+const { frontmatter, headings } = Astro.props;
+---
+
+<Base title={frontmatter.title} toc={true}>
+    <main class="flex min-h-0 flex-shrink flex-grow flex-col">
+        <section class="flex min-h-0 flex-shrink flex-grow flex-row">
+            <div class="wrapper">
+                <h1>{frontmatter.title}</h1>
+                <h2>{frontmatter.order}</h2>
+                <slot />
+                {
+                    headings.map((heading) => {
+                        return (
+                            <div>
+                                <h1>{heading.text}</h1>
+                                <h2>{heading.depth}</h2>
+                                <h3>{heading.slug}</h3>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </section>
+    </main>
+</Base>
