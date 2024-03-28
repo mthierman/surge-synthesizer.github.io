@@ -14,7 +14,7 @@ Note: Some of these options are also present at the top of the user interface fo
 
 This menu can also be opened by right-clicking anywhere on the user interface where there are no controls.
 
-### Zoom
+## Zoom
 
 The **Zoom** option can be extremely useful on certain monitors and configurations.
 
@@ -24,7 +24,7 @@ Keep in mind that it will not let you change it to any size, as there is an uppe
 When a new instance of Surge is loaded, its zoom will be set to default size. To change this value,
 go back in this sub-menu and select the option "Set [zoom %] as default", or "Set default zoom to ..." then enter the desired value.
 
-### Skins
+## Skins
 
 This is where the UI skin can be chosen. Surge XT comes with two factory skins: **Classic** and **Dark**.
 
@@ -46,7 +46,7 @@ inspector and open the skin development guide.
 If you would like to get on board with the skin engine and developing skins,
 see the documentation on [developing Surge XT skins](https://surge-synthesizer.github.io/skin-manual.html).
 
-### Value Displays
+## Value Displays
 
 -   **High Precision Value Readouts** - Allows value popups that appear when tweaking parameters to show more digits
     after the decimal point (6 digits). This can be useful in some more advanced and precise scenarios.
@@ -64,7 +64,7 @@ see the documentation on [developing Surge XT skins](https://surge-synthesizer.g
 -   **Middle C** - Allows you to change the reference octave shown in popup displays of some frequency-related parameters,
     such as filter cutoff for instance. You can change Middle C to display either **C3**, **C4** or **C5**.
 
-### Data Folders
+## Data Folders
 
 In this sub-menu, there are a couple of options regarding user data and patches.
 
@@ -78,7 +78,7 @@ configuration files are stored.
 **Rescan all data folders** - This option can be useful after importing patches created by someone else,
 after transferring user patches to another computer, or after downloading patches from the internet.
 
-### Mouse Behavior
+## Mouse Behavior
 
 This sub-menu contains options allowing you to change the sensitivity of the mouse when moving sliders.
 While _Legacy_ is used by default, the other 3 options range from _Slow_ (more granular) to _Exact_
@@ -88,7 +88,7 @@ screen when dragging on a control.
 Touchscreen mode automatically sets the mouse options to give the user the best experience when using Surge
 on a touch screen.
 
-### Patch Settings
+## Patch Settings
 
 This is where you can configure what appears by default in the **Author** and **Comment** fields when saving a patch. \
 You can also set the currently loaded patch as the default patch, append the original author
@@ -96,7 +96,7 @@ name to modified patches or not, and configure tuning and tuning mapping when lo
 Finally, there are options to export the currently loaded patch as an HTML file, either containing
 all parameters, or only the ones that aren't set to their default value.
 
-### Workflow
+## Workflow
 
 -   **Remember tab positions per scene** - Remember tab positions (for example, currently selected oscillator or
     LFO currently shown in the LFO editor) separately for each scene or unified in the whole synth.
@@ -128,7 +128,7 @@ all parameters, or only the ones that aren't set to their default value.
 
 -   **Oscilloscope...** - This opens a window that displays an oscilloscope or a spectrum analyser. See [Oscilloscope](#oscilloscope) for more information.
 
-### Accessibility
+## Accessibility
 
 -   **Set all recommended accessibility options** - Enables all the accessibility options found right below. Useful for quickly setting up
     Surge XT to work with screen readers.
@@ -145,21 +145,21 @@ all parameters, or only the ones that aren't set to their default value.
 -   **Focus modulator editor on "Add modulation from" actions** - After using the context menu option ["Add modulation from"](#add-modulation-from),
     the modulator that is used to modulate the targeted control will be displayed in the modulation editor.
 
-### MPE Settings
+## MPE Settings
 
 **MPE** stands for **MIDI Polyphonic Expression**. It can be enabled or disabled in its sub-menu.
 The current and default pitch bend range can be changed here as well. Finally, you can also configure
 the MPE pitch bend smoothing amount.
 
-### MIDI Settings
+## MIDI Settings
 
 This sub-menu contains options for MIDI mappings.
 
-#### Controller Smoothing
+### Controller Smoothing
 
 This sub-menu contains options to set the amount of desired MIDI controller smoothing.
 
-#### Sustain Pedal in Mono Mode
+### Sustain Pedal in Mono Mode
 
 -   **Sustain pedal holds all notes (no note off retrigger)** - If sustain is engaged and multiple notes are hit then
     held one after the other, Surge XT will stay on the latest note when releasing it instead of switching to the previous
@@ -167,62 +167,64 @@ This sub-menu contains options to set the amount of desired MIDI controller smoo
 -   **Sustain pedal allows note off retrigger** - If sustain is engaged and multiple notes are hit then held one after
     the other, Surge XT will switch to the previous note when the latest note is released.
 
-#### Use MIDI channels 2 and 3 to play scenes individually
+### Use MIDI channels 2 and 3 to play scenes individually
 
 Playing MIDI channels 2 or 3 when this option is unchecked will not play scene A or B individually.
 
-#### Ignore MIDI Program Change messages
+### Ignore MIDI Program Change messages
 
 Self-explanatory. You probably want to turn this on in most situations.
 
-#### Save MIDI mapping as...
+### Save MIDI mapping as...
 
 This allows you to save the current MIDI mapping. The newly created profile will appear in this menu under the two top options.
 
-#### Set current MIDI mapping as default
+### Set current MIDI mapping as default
 
 When a new instance of Surge XT is opened, it will load this MIDI mapping by default if you select this option.
 
-#### Clear current MIDI mapping
+### Clear current MIDI mapping
 
 As its name suggests, this option clears the existing MIDI mapping in Surge XT and resets it back to default.
 
-#### Show Current MIDI Mapping
+### Show Current MIDI Mapping
 
 This opens up an HTML file listing the currently loaded MIDI mapping.
 
-### OSC settings
+## OSC settings
 
-Since version 1.3, Surge XT supports the Open Sound Control protocol. 
+Since version 1.3, Surge XT supports the Open Sound Control protocol.
 This sub-menu contains useful options related to OSC.
 
-#### Show OSC Settings...
+### Show OSC Settings...
 
 Selecting this option will open a small window containing the various settings related to OSC:
 
-- **OSC In**: Allows you to change the port used for incoming OSC data. The currently used port is displayed in parentheses. Click on
-*Default Port* to reset the input port to its default value.
-- **OSC Out**: Allows you to change the port used for outgoing OSC data. The currently used port is displayed in parentheses. Click on
-*Default Port* to reset the output port to its default value.
-- **Out IP Address**: Allows you to change the output IP address used for the OSC protocol. Click on **Localhost** to reset the output
-IP address to its default value (the loopback address).
-- **?**: Allows you to see this section of the manual or displays the OSC specification (see below).
+-   **OSC In**: Allows you to change the port used for incoming OSC data. The currently used port is displayed in parentheses. Click on
+    _Default Port_ to reset the input port to its default value.
+-   **OSC Out**: Allows you to change the port used for outgoing OSC data. The currently used port is displayed in parentheses. Click on
+    _Default Port_ to reset the output port to its default value.
+-   **Out IP Address**: Allows you to change the output IP address used for the OSC protocol. Click on **Localhost** to reset the output
+    IP address to its default value (the loopback address).
+-   **?**: Allows you to see this section of the manual or displays the OSC specification (see below).
 
-#### Show OSC specification...
+### Show OSC specification...
+
 Clicking on this option will open a local page on your browser that will provide informations about the specific
 implementation of OSC in Surge XT, as well as some more general information and documentation about the OSC
 protocol.
 
-#### Download TouchOSC template...
-We also provide a [TouchOSC](https://hexler.net/touchosc) template, and this option opens a 
+### Download TouchOSC template...
+
+We also provide a [TouchOSC](https://hexler.net/touchosc) template, and this option opens a
 [download page](https://surge-synthesizer.github.io/touchosc/) to read about it and get it for yourself.
 
-### Tuning
+## Tuning
 
 These options are also present in the Tuning menu at the top of the interface. See [Microtuning](#microtuning) for
 detailed explanations on the tuning implementation within Surge XT.
 
-### Online Links
+## Online Links
 
 The following items are for [reaching the developers and user feedback information](https://surge-synthesizer.github.io/feedback),
 [reading the code on GitHub](https://github.com/surge-synthesizer/surge/),
@@ -230,11 +232,11 @@ The following items are for [reaching the developers and user feedback informati
 visiting [Skin Library](https://surge-synthesizer.github.io/skin-library), opening this user manual,
 and finally [opening Surge's website](https://surge-synthesizer.github.io/).
 
-### About Surge XT
+## About Surge XT
 
 Finally, there is an option to open the **About** pane containing various version, configuration and license information.
 
-### Developer Menu
+## Developer Menu
 
 When right-clicking on the Menu button, some more options for development and testing purposes appear in various sub-menus.
 Holding down **Shift** when right-clicking anywhere where there is no control will also display this Developer option sub-menu.

@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import buildToc from "scripts/buildToc";
+import TocHeadings from "./toc_headings.astro";
+
+const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order - b.data.order);
+
+const getHeadings = async () => {
+    let map = new Map<string, any[]>();
+
+    for (const section of sections) {
+        const { headings } = await section.render();
+        map.set(section.data.title, buildToc(headings)!);
+    }
+
+    return map;
+};
+
+const headings = await getHeadings();
+
+let array = [];
+
+for (const heading of headings) {
+    array.push(heading);
+}
+---
+
+<menu id="toc" class="toc">
+    {array.map((a) => <TocHeadings heading={a[1].at(0)} />)}
+</menu>
