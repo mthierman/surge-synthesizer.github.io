@@ -1,0 +1,35 @@
+---
+import type { MarkdownHeading } from "astro";
+import { Debug } from "astro:components";
+import { getCollection } from "astro:content";
+
+import buildToc from "scripts/buildToc";
+import TocTestHeadings from "components/toc_test_headings.astro";
+
+const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order - b.data.order);
+
+const getHeadings = async () => {
+    let array: MarkdownHeading[][] = [];
+
+    for (const section of sections) {
+        const { headings } = await section.render();
+        array.push(headings);
+    }
+
+    return array;
+};
+
+const headings = await getHeadings();
+
+// const toc = buildToc(headings[8]);
+---
+
+<Debug toc={buildToc(headings[8])} />
+<!-- <Debug toc={headings[8]} /> -->
+<!-- <Debug toc={toc} /> -->
+
+<!-- {toc?.map((section) => <TocTestHeadings heading={section} />)} -->
+
+<!-- {headings.map((heading) => <TocTestHeadings heading={heading} />)} -->
+
+<!-- <TocTestHeadings headings={buildToc(headings[0])} /> -->

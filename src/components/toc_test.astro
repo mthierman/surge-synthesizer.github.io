@@ -1,26 +1,27 @@
 ---
-import type { MarkdownHeading } from "astro";
+// import type { MarkdownHeading } from "astro";
+import buildToc from "scripts/buildToc";
 import { getCollection } from "astro:content";
 import TocHeadings from "./toc_test_headings.astro";
 
-const buildToc = (headings: MarkdownHeading[] | undefined) => {
-    if (headings === undefined) return;
+// const buildToc = (headings: MarkdownHeading[] | undefined) => {
+//     if (headings === undefined) return;
 
-    const toc: any[] = [];
-    const parentHeadings = new Map();
+//     const toc: any[] = [];
+//     const parentHeadings = new Map();
 
-    headings.forEach((h: any) => {
-        const heading: MarkdownHeading = { ...h, subheadings: [] };
-        parentHeadings.set(heading.depth, heading);
+//     headings.forEach((h: any) => {
+//         const heading: MarkdownHeading = { ...h, subheadings: [] };
+//         parentHeadings.set(heading.depth, heading);
 
-        if (heading.depth === 1) {
-            toc.push(heading);
-        } else {
-            parentHeadings.get(heading.depth - 1).subheadings.push(heading);
-        }
-    });
-    return toc;
-};
+//         if (heading.depth === 1) {
+//             toc.push(heading);
+//         } else {
+//             parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+//         }
+//     });
+//     return toc;
+// };
 
 const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order - b.data.order);
 
@@ -29,8 +30,11 @@ const getHeadings = async () => {
 
     for (const section of sections) {
         const { headings } = await section.render();
-        map.set(section.data.title, buildToc(headings)!);
+        console.log(headings);
+        // map.set(section.data.title, buildToc(headings)!);
     }
+
+    // console.log(map);
 
     return map;
 };
