@@ -9,7 +9,7 @@ const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order 
 ---
 
 <Default title="User Manual" toc={true}>
-    <Toc />
+    <Toc sections={sections} />
     <div class="wrapper">
         <div id="pagecontent">
             <div class="mb-8 flex flex-col justify-center">

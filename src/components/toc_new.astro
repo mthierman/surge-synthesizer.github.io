@@ -1,22 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import buildToc from "scripts/buildToc";
+import getHeadings from "scripts/getHeadings";
 import TocHeadings from "./toc_new_headings.astro";
 
-const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order - b.data.order);
+const { sections } = Astro.props;
 
-const getHeadings = async () => {
-    let map = new Map<string, any[]>();
-
-    for (const section of sections) {
-        const { headings } = await section.render();
-        map.set(section.data.title, buildToc(headings)!);
-    }
-
-    return map;
-};
-
-const headings = await getHeadings();
+const headings = await getHeadings(sections);
 
 let array = [];
 
