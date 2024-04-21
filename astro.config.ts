@@ -1,5 +1,6 @@
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import starlight from "@astrojs/starlight";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
@@ -11,5 +12,5 @@ export default defineConfig({
             wrap: true,
         },
     },
-    integrations: [mdx(), react(), tailwind()],
+    integrations: [starlight({title: "Surge XT"}), react(), tailwind()],
 });

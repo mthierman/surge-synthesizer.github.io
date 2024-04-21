@@ -1,4 +1,5 @@
 ---
+import { TabItem, Tabs } from "@astrojs/starlight/components";
 import Panel from "components/panel.astro";
 import PanelItem from "components/panel_item.astro";
 import PanelText from "components/panel_text.astro";
@@ -20,10 +21,10 @@ import PanelMedia from "components/panel_media.astro";
             </p>
 
             <p>
-                Surge XT was in the spotlight of OSC #122, #138, #159, and most recently, #181. A talented
-                group of musicians created all these tracks using Surge XT as the only sound generating
-                device. Or - in some exceptional cases - only Surge XT Effects plugin was used, much to
-                our awe and amazement!
+                Surge XT was in the spotlight of OSC #122, #138, #159, and most recently, #181. A
+                talented group of musicians created all these tracks using Surge XT as the only
+                sound generating device. Or - in some exceptional cases - only Surge XT Effects
+                plugin was used, much to our awe and amazement!
             </p>
 
             <p>
@@ -36,41 +37,48 @@ import PanelMedia from "components/panel_media.astro";
     <PanelItem>
         <PanelMedia>
             <div class="flex flex-col items-center">
-                <iframe
-                    width="100%"
-                    height="250"
-                    scrolling="yes"
-                    frameborder="no"
-                    allow="autoplay" 
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1803556615">
-                </iframe>
-
-                <iframe
-                    width="100%"
-                    height="250"
-                    scrolling="yes"
-                    frameborder="no"
-                    allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1447158379">
-                </iframe>
-
-                <iframe
-                    width="100%"
-                    height="250"
-                    scrolling="yes"
-                    frameborder="no"
-                    allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1121073988">
-                </iframe>
-
-                <iframe
-                    width="100%"
-                    height="250"
-                    scrolling="yes"
-                    frameborder="no"
-                    allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/769840530">
-                </iframe>
+                <Tabs>
+                    <TabItem label="#181">
+                        <iframe
+                            width="100%"
+                            height="250"
+                            scrolling="yes"
+                            frameborder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1803556615">
+                        </iframe>
+                    </TabItem>
+                    <TabItem label="#159">
+                        <iframe
+                            width="100%"
+                            height="250"
+                            scrolling="yes"
+                            frameborder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1447158379">
+                        </iframe>
+                    </TabItem>
+                    <TabItem label="#138">
+                        <iframe
+                            width="100%"
+                            height="250"
+                            scrolling="yes"
+                            frameborder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1121073988">
+                        </iframe>
+                    </TabItem>
+                    <TabItem label="#122">
+                        <iframe
+                            width="100%"
+                            height="250"
+                            scrolling="yes"
+                            frameborder="no"
+                            allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/769840530">
+                        </iframe>
+                    </TabItem>
+                </Tabs>
 
                 <p>
                     <a class="text-xs" href="https://soundcloud.com/pages/cookies">

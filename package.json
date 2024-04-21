@@ -23,6 +23,7 @@
         "@astrojs/markdown-remark": "^4.3.2",
         "@astrojs/mdx": "^2.2.2",
         "@astrojs/react": "^3.1.0",
+        "@astrojs/starlight": "^0.21.5",
         "@astrojs/tailwind": "^5.1.0",
         "@astrojs/ts-plugin": "^1.6.1",
         "@types/node": "^20.11.30",

@@ -162,6 +162,10 @@
         @apply m-auto min-h-0 max-w-[100ch] p-8;
     }
 
+    .tablist-wrapper {
+        overflow-x: hidden !important;
+    }
+
     /* TOC */
 
     .toc {
