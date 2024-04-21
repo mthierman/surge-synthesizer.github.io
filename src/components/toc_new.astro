@@ -1,0 +1,18 @@
+---
+import getHeadings from "scripts/getHeadings";
+import TocHeadings from "./toc_new_headings.astro";
+
+const { sections } = Astro.props;
+
+const headings = await getHeadings(sections);
+
+let array = [];
+
+for (const heading of headings) {
+    array.push(heading);
+}
+---
+
+<menu id="toc" class="xt-toc">
+    {array.map((a) => <TocHeadings heading={a[1].at(0)} />)}
+</menu>
