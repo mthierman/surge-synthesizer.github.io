@@ -1,43 +1,19 @@
 ---
-import "styles/index.css";
-import Nav from "components/nav.astro";
+import { ClientRouter } from "astro:transitions";
+
+import "../styles/index.css";
+import Nav from "../components/nav.astro";
+import Theme from "../components/theme.astro";
+
+// interface Props {
+//     title: string | undefined;
+// }
 
 const { title, toc } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="dark h-full">
-    <script>
-        const setTheme = (dark: boolean) => {
-            document
-                .querySelector('meta[name="color-scheme"]')
-                ?.setAttribute("content", dark ? "dark" : "light");
-
-            dark
-                ? document.documentElement.classList.add("dark")
-                : document.documentElement.classList.remove("dark");
-        };
-
-        const theme = localStorage.getItem("theme");
-
-        if (theme) {
-            switch (theme) {
-                case "dark": {
-                    setTheme(true);
-                    break;
-                }
-                case "light": {
-                    setTheme(false);
-                    break;
-                }
-            }
-        } else {
-            localStorage.setItem(
-                "theme",
-                window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
-            );
-        }
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:url" content={Astro.url.href} />
@@ -60,9 +36,44 @@ const { title, toc } = Astro.props;
     <link rel="preload" href="/fonts/Lato-Regular.woff" as="font" type="font/woff" crossorigin />
     <link rel="preload" href="/fonts/Lato-Italic.woff" as="font" type="font/woff" crossorigin />
     <title>{title}</title>
+    <script is:inline>
+        function applyTheme() {
+            if (!localStorage.getItem("theme")) {
+                localStorage.setItem("theme", "auto");
+            }
 
-    <body class="flex h-full min-w-0 flex-col overflow-hidden">
-        <Nav toc={toc} />
-        <slot />
+            switch (localStorage.getItem("theme")) {
+                case "auto":
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? document.documentElement.setAttribute("data-theme", "dark")
+                        : document.documentElement.setAttribute("data-theme", "light");
+                    break;
+
+                case "dark":
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    break;
+
+                case "light":
+                    document.documentElement.setAttribute("data-theme", "light");
+                    break;
+            }
+        }
+
+        applyTheme();
+
+        document.addEventListener("astro:after-swap", () => {
+            applyTheme();
+        });
+    </script>
+    <ClientRouter />
+
+    <body class="">
+        <main class="grid min-h-full grid-rows-[auto_1fr_auto]">
+            <Nav toc={toc} />
+            <div class="self-start p-4">
+                <slot />
+            </div>
+            <Theme />
+        </main>
     </body>
 </html>
