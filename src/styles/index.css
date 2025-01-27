@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @font-face {
     font-family: "Lato";
@@ -18,17 +20,16 @@
     font-display: block;
 }
 
-:root {
-    --surgeOrange: #ff9900;
-    --surgeOrangeBright: #ffa826;
-    --surgeBlue: #2d86fe;
-    --surgeBlueBright: #4c98fe;
-    --backgroundBlue: #005db6;
+@theme {
+    --font-sans: "Lato";
+    --color-surgeOrange: #ff9900;
+    --color-surgeOrangeBright: #ffa826;
+    --color-surgeBlue: #2d86fe;
+    --color-surgeBlueBright: #4c98fe;
+    --color-backgroundBlue: #005db6;
 }
 
 @layer base {
-    /* GLOBAL STYLES */
-
     :root {
         @apply bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 print:bg-white;
     }
