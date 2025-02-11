@@ -1,13 +1,13 @@
 ---
 import { getCollection, render } from "astro:content";
-import Default from "../layouts/default.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 import SurgeLogo from "../components/surge_logo.astro";
 import Toc from "../components/toc.astro";
 
 const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Default title="User Manual" toc={true}>
+<DefaultLayout title="User Manual" toc={true}>
     <Toc />
     <div class="wrapper">
         <div id="pagecontent">
@@ -30,4 +30,4 @@ const sections = (await getCollection("manual_xt")).sort((a, b) => a.data.order 
             }
         </div>
     </div>
-</Default>
+</DefaultLayout>

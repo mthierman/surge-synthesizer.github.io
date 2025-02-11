@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Default from "../layouts/default.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Skin from "../components/skin.astro";
 
 const skins = (await getCollection("skins")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Default title="Skin Library" toc={false}>
+<DefaultLayout title="Skin Library" toc={false}>
     <div class="wrapper">
         <div id="pagecontent">
             <span class="title">Skin Library</span>
@@ -42,4 +42,4 @@ const skins = (await getCollection("skins")).sort((a, b) => a.data.order - b.dat
             }
         </div>
     </div>
-</Default>
+</DefaultLayout>

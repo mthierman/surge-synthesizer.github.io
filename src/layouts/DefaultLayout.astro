@@ -1,13 +1,13 @@
 ---
-import Base from "./base.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 const { title, toc } = Astro.props;
 ---
 
-<Base title={title} toc={toc}>
+<BaseLayout title={title} toc={toc}>
     <div class="flex min-h-0 flex-shrink flex-grow flex-col">
         <div class="flex min-h-0 flex-shrink flex-grow flex-row">
             <slot />
         </div>
     </div>
-</Base>
+</BaseLayout>

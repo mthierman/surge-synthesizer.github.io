@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import Default from "../layouts/default.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 import ChangelogToc from "../components/toc_changelog.astro";
 
 const changelogs = (await getCollection("old_changelogs"))
@@ -16,7 +16,7 @@ const previousChangelog = changelogs.filter(
 );
 ---
 
-<Default title="Old Changelogs" toc={true}>
+<DefaultLayout title="Old Changelogs" toc={true}>
     <ChangelogToc />
     <div class="wrapper">
         <div id="pagecontent">
@@ -66,7 +66,7 @@ const previousChangelog = changelogs.filter(
             }
         </div>
     </div>
-</Default>
+</DefaultLayout>
 
 <script is:inline>
     const toggleSection = (e) => {

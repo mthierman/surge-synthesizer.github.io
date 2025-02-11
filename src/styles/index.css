@@ -40,11 +40,6 @@
         scrollbar-width: auto;
     }
 
-    html,
-    body {
-        height: 100%;
-    }
-
     h1,
     h2,
     h3,
@@ -178,15 +173,15 @@
         @apply rounded p-1 text-black no-underline hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
     }
     .category {
-        @apply block w-full rounded p-1 text-black no-underline group-hover:bg-black group-hover:text-surgeOrange hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
+        @apply block w-full text-black no-underline group-hover:bg-black group-hover:text-surgeOrange hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
     }
     .submenu {
         @apply absolute right-0 left-0 hidden min-w-48 bg-transparent group-hover:block md:right-[unset] md:left-[unset];
     }
     .dropdown {
-        @apply flex flex-col rounded-lg bg-surgeOrange p-2 shadow-md;
+        @apply flex flex-col bg-surgeOrange shadow-md;
     }
     .link {
-        @apply block w-full rounded p-1 text-black no-underline hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
+        @apply block w-full text-black no-underline hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
     }
 }
