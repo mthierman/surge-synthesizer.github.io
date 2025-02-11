@@ -176,10 +176,7 @@
         @apply block w-full text-black no-underline group-hover:bg-black group-hover:text-surgeOrange hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
     }
     .submenu {
-        @apply absolute right-0 left-0 hidden min-w-48 bg-transparent group-hover:block md:right-[unset] md:left-[unset];
-    }
-    .dropdown {
-        @apply flex flex-col bg-surgeOrange shadow-md;
+        @apply absolute right-0 left-0 hidden min-w-48 bg-surgeOrange group-hover:block md:right-[unset] md:left-[unset];
     }
     .link {
         @apply block w-full text-black no-underline hover:cursor-pointer hover:bg-black hover:text-surgeOrange;
