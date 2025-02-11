@@ -2,9 +2,6 @@
 import { getCollection, render } from "astro:content";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-const { page } = Astro.props;
-const { Content } = await render(page);
-
 export async function getStaticPaths() {
     const pages = await getCollection("pages");
     return pages.map((page) => ({
@@ -12,13 +9,11 @@ export async function getStaticPaths() {
         props: { page },
     }));
 }
+
+const { page } = Astro.props;
+const { Content } = await render(page);
 ---
 
-<DefaultLayout title={page.data.title} toc={false}>
-    <div class="wrapper">
-        <div id="pagecontent">
-            <span class="title">{page.data.title}</span>
-            <Content />
-        </div>
-    </div>
+<DefaultLayout title={`Surge | ${page.data.title}`} toc={false}>
+    <Content />
 </DefaultLayout>
