@@ -83,15 +83,16 @@ const { toc } = Astro.props;
         <li>
             <ThemeToggle />
         </li>
+        {
+            toc && (
+                <li>
+                    <a id="toc_toggle" class="toc-toggle">
+                        ≡
+                    </a>
+                </li>
+            )
+        }
     </menu>
-
-    {
-        toc && (
-            <a id="toc_toggle" class="toc-toggle">
-                ≡
-            </a>
-        )
-    }
 </nav>
 
 <script>
