@@ -5,7 +5,5 @@ const { title, toc } = Astro.props;
 ---
 
 <BaseLayout title={title} toc={toc}>
-    <div class="flex min-h-0 flex-shrink flex-grow flex-col overflow-auto">
-        <slot />
-    </div>
+    <slot />
 </BaseLayout>
