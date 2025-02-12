@@ -1,5 +1,5 @@
 ---
-import HomeLayout from "../layouts/HomeLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/hero.astro";
 import Videos from "../components/home/videos.astro";
 import OSC from "../components/home/osc.astro";
@@ -16,7 +16,7 @@ import SystemRequirements from "../components/home/system_requirements.astro";
 import Footer from "../components/home/footer.astro";
 ---
 
-<HomeLayout title="Surge" toc={false}>
+<BaseLayout title="Surge" toc={false}>
     <Hero />
     <Videos />
     <OSC />
@@ -31,4 +31,4 @@ import Footer from "../components/home/footer.astro";
     <Community />
     <SystemRequirements />
     <Footer />
-</HomeLayout>
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Article from "../components/article.astro";
 
 export async function getStaticPaths() {
@@ -15,8 +15,10 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 
-<DefaultLayout title={`Surge | ${page.data.title}`} toc={false}>
-    <Article>
-        <Content />
-    </Article>
-</DefaultLayout>
+<BaseLayout title={`Surge | ${page.data.title}`} toc={false}>
+    <div class="w-fit place-self-center p-6">
+        <Article>
+            <Content />
+        </Article>
+    </div>
+</BaseLayout>
