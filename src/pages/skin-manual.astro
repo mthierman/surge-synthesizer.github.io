@@ -1,6 +1,6 @@
 ---
 import { getEntry, render } from "astro:content";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Toc from "../components/toc.astro";
 import * as skin_autodoc from "../assets/includes/skin_autodoc.md";
 
@@ -15,7 +15,7 @@ const { Content } = await render(engine);
 const AutoDoc = skin_autodoc.Content;
 ---
 
-<DefaultLayout title={engine.data.title} toc={true}>
+<BaseLayout title={engine.data.title} toc={true}>
     <Toc />
     <div class="wrapper">
         <div id="pagecontent">
@@ -24,4 +24,4 @@ const AutoDoc = skin_autodoc.Content;
             <AutoDoc />
         </div>
     </div>
-</DefaultLayout>
+</BaseLayout>

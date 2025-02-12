@@ -1,6 +1,6 @@
 ---
 import { getEntry, render } from "astro:content";
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Toc from "../components/toc.astro";
 
 const tuning_guide = await getEntry("pages", "tuning-guide");
@@ -12,7 +12,7 @@ if (!tuning_guide) {
 const { Content } = await render(tuning_guide);
 ---
 
-<DefaultLayout title={tuning_guide.data.title} toc={true}>
+<BaseLayout title={tuning_guide.data.title} toc={true}>
     <Toc />
     <div class="wrapper">
         <div id="pagecontent">
@@ -20,4 +20,4 @@ const { Content } = await render(tuning_guide);
             <Content />
         </div>
     </div>
-</DefaultLayout>
+</BaseLayout>
