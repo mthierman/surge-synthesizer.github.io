@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 import ThemeToggle from "./theme_toggle.astro";
 import Logo from "../../public/images/sst-logo.svg";
 
+interface Props {
+    toc: boolean;
+}
+
 const { toc } = Astro.props;
 ---
 
