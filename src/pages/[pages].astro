@@ -16,9 +16,7 @@ const { Content } = await render(page);
 ---
 
 <BaseLayout title={`Surge | ${page.data.title}`} toc={false}>
-    <div class="w-fit place-self-center p-6">
         <Article>
             <Content />
         </Article>
-    </div>
 </BaseLayout>
